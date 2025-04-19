@@ -28,7 +28,7 @@ let musicPlaying = false;
 
 // Image data (replace with actual images)
 const images = [
-  { src: 'photo1.jpg', alt: 'Birthday memory 1', caption: 'siminare 😂😂' },
+  { src: 'photo1.jpg', alt: 'Birthday memory 1', caption: '' },
   { src: 'placeholder.jpg', alt: 'Birthday memory 2', caption: 'Beach day last summer' },
   { src: 'placeholder.jpg', alt: 'Birthday memory 3', caption: 'New Year\'s celebration' },
   { src: 'placeholder.jpg', alt: 'Birthday memory 4', caption: 'Coffee shop meetup' },
