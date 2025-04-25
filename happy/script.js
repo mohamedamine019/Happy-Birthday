@@ -72,6 +72,7 @@ function setupEventListeners() {
   // Yes button
   yesButton.addEventListener('click', () => {
     window.location.href = 'message.html';
+    consle.log('button active');
     console.log(document.getElementById('yesButton')); // Should log the button element
   }); 
   
