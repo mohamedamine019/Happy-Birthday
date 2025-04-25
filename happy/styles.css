@@ -1144,6 +1144,7 @@ body {
   border-radius: 9999px;
   font-size: 1.125rem;
   font-weight: 600;
+  z-index: 10;
   border: none;
   cursor: pointer;
   transition: all 0.3s;
