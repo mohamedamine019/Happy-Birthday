@@ -69,11 +69,11 @@ function setupEventListeners() {
   // Letter click
   letterContainer.addEventListener('click', handleLetterClick);
   
- /*  // Yes button
+  // Yes button
   yesButton.addEventListener('click', () => {
     window.location.href = 'message.html';
     console.log(document.getElementById('yesButton')); // Should log the button element
-  }); */
+  }); 
   
   // Gallery button
   galleryButton.addEventListener('click', openGallery);
