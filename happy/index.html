@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="main-container">
+    <!-- Background Effects -->
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="gradient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+    </div>
+    <div id="floatingHearts" class="floating-hearts"></div>
+    
+    <!-- Music Player -->
+    <div class="music-player">
+      <button id="musicToggle" class="music-toggle">
+        <span class="music-icon">♪</span>
+      </button>
+      <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5" class="volume-slider">
+    </div>
+    
+    <!-- Letter -->
+    <div id="letterContainer" class="letter-container">
+      <div class="letter-glow"></div>
+      <div class="letter">
+        <div class="envelope-flap"></div>
+        <div class="decorative-element"></div>
+        <div class="letter-content">
+          <p>Click to open</p>
+          <p class="arrow-hint">↓ ↓ ↓</p>
+        </div>
+        <div class="envelope-seal">
+          <div class="seal-inner">
+            <span>Amine</span>
+          </div>
+        </div>
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+      </div>
+    </div>
+    
+    <!-- Countdown Timer -->
+    <div id="countdownTimer" class="countdown-timer hidden">
+      <div class="countdown-circle">
+        <span id="countdownNumber">3</span>
+      </div>
+      <p class="countdown-text">Get ready for a surprise...</p>
+    </div>
+    
+    <!-- Image Slideshow -->
+    <div id="imageSlideshow" class="image-slideshow hidden">
+      <div class="slideshow-container">
+        <div class="slide-frame">
+          <img id="currentSlide" src="placeholder.jpg" alt="Birthday memory">
+          <div class="slide-caption">Birthday memory</div>
+        </div>
+      </div>
+      <div id="slideDots" class="slide-dots"></div>
+    </div>
+    
+    <!-- Celebrations -->
+    <div id="celebrations" class="celebrations hidden">
+      <div class="birthday-message">
+        <h1 class="gradient-text">Happy Birthday to...!</h1>
+        <p>May all your wishes come true!</p>
+      </div>
+      <div id="balloons" class="balloons"></div>
+      
+      <div class="button-container">
+        <button id="yesButton" class="button button-yes">Yes</button>
+        <button id="noButton" class="button button-no">No</button>
+        <button id="galleryButton" class="button button-gallery">View Photos</button>
+      </div>
+    </div>
+    
+    <!-- Photo Gallery -->
+    <div id="photoGallery" class="photo-gallery hidden">
+      <div class="gallery-header">
+        <h2>Photo Memories</h2>
+        <button id="closeGallery" class="close-button">×</button>
+      </div>
+      <div class="gallery-main">
+        <img id="galleryMainImage" src="placeholder.jpg" alt="Gallery image">
+        <div class="gallery-caption" id="galleryCaption">Beautiful memory</div>
+        <button class="gallery-nav gallery-prev">❮</button>
+        <button class="gallery-nav gallery-next">❯</button>
+      </div>
+      <div class="gallery-thumbnails" id="galleryThumbnails"></div>
+    </div>
+  </main>
+  
+  <audio id="backgroundMusic" loop>
+    <source src="happy-birthday-322777.mp3" type="audio/mpeg">
+  </audio>
+  
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

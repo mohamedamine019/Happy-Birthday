@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write Your Birthday Wish</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="main-container">
+    <!-- Background Effects -->
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="gradient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+    </div>
+    <div id="floatingHearts" class="floating-hearts"></div>
+    
+    <!-- Music Player -->
+    <div class="music-player">
+      <button id="musicToggle" class="music-toggle">
+        <span class="music-icon">♪</span>
+      </button>
+      <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5" class="volume-slider">
+    </div>
+    
+    <!-- Write Wish Form -->
+    <div class="wish-form-container">
+      <div class="wish-form-header">
+        <h1>Write Your Birthday Wish</h1>
+        <p>Leave a special message that will be treasured forever!</p>
+      </div>
+      
+      <form id="wishForm" class="wish-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required class="form-input" placeholder="Enter your name">
+        </div>
+        
+        <div class="form-group">
+          <label for="relationship">Your Relationship</label>
+          <select id="relationship" name="relationship" class="form-input">
+            <option value="Friend">Friend</option>
+            <option value="Family">Family</option>
+            <option value="Nti">Nti</option>
+            <option value="M3labalich">M3labalich</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Your Birthday Wish</label>
+          <textarea id="message" name="message" required class="form-textarea" placeholder="Write your heartfelt birthday wish here..."></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="bgColor">Choose Background Color</label>
+          <div class="color-options">
+            <div class="color-option" data-color="#ec4899" style="background-color: #ec4899;"></div>
+            <div class="color-option" data-color="#8b5cf6" style="background-color: #8b5cf6;"></div>
+            <div class="color-option" data-color="#3b82f6" style="background-color: #3b82f6;"></div>
+            <div class="color-option" data-color="#10b981" style="background-color: #10b981;"></div>
+            <div class="color-option" data-color="#f59e0b" style="background-color: #f59e0b;"></div>
+            <div class="color-option" data-color="#ef4444" style="background-color: #ef4444;"></div>
+          </div>
+          <input type="hidden" id="bgColor" name="bgColor" value="#ec4899">
+        </div>
+        
+        <div class="form-buttons">
+          <button type="submit" class="wish-submit-btn">Send Your Wish</button>
+          <a href="view-wish.html" class="view-wishes-btn">View All Wishes</a>
+        </div>
+      </form>
+      
+      <div class="navigation-links">
+        <a href="index.html" class="nav-link">Back to Home</a>
+      </div>
+    </div>
+    
+    <!-- Success Message -->
+    <div id="successMessage" class="success-message hidden">
+      <div class="success-content">
+        <div class="success-icon">✓</div>
+        <h2>Thank You!</h2>
+        <p>Your birthday wish has been sent successfully!</p>
+        <div class="success-buttons">
+          <button id="writeAnotherBtn" class="write-another-btn">Write Another</button>
+          <a href="view-wish.html" class="view-wishes-btn">View All Wishes</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <audio id="backgroundMusic" loop>
+    <source src="happy-birthday-322777.mp3" type="audio/mpeg">
+  </audio>
+  
+  <script src="write-wish.js"></script>
+</body>
+</html>
