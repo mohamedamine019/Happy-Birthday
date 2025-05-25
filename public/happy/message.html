@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Message Of </title>
+  <meta name="description" content="This is a birthday celebration page for .">
+  <meta name="keywords" content="birthday, celebration, happy birthday">
+  <meta name="author" content="Amine">
+  <link type="image/png" sizes="16x16" rel="icon" href="./images/icons8-birthday-color-16.png"> <link type="image/png" sizes="32x32" rel="icon" href="./images/icons8-birthday-color-32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="main-container">
+    <!-- Background Effects -->
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="gradient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+    </div>
+    <div id="floatingHearts" class="floating-hearts"></div>
+    
+    <!-- Music Player -->
+    <div class="music-player">
+      <button id="musicToggle" class="music-toggle">
+        <span class="music-icon">♪</span>
+      </button>
+      <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5" class="volume-slider">
+    </div>
+    
+    <!-- Message Card -->
+    <div id="messageCard" class="message-card">
+      <!-- Decorative elements -->
+      <div class="paper-texture"></div>
+      <div class="paper-edge paper-edge-top"></div>
+      <div class="paper-edge paper-edge-bottom"></div>
+      
+      <div class="message-content">
+        <h1 class="message-title">
+          Thank God for blessing me with a friend like you...
+          <span class="title-underline"></span>
+        </h1>
+        
+        <div class="message-text" id="handwritingText"></div>
+        
+        <!-- Decorative divider -->
+        <div class="message-divider">
+          <div class="divider-line"></div>
+          <div class="divider-flower">✿</div>
+          <div class="divider-line"></div>
+        </div>
+        
+        <div class="message-signature">
+          <p>With love,</p>
+          <p class="signature-name">Amine</p>
+          <div class="signature-image">
+            <img src="" alt="Signature">
+          </div>
+        </div>
+        
+        <div class="message-button">
+          <a href="index.html" class="back-button">Back to Home</a>
+          <a href="view-wish.html" class="wishlist-link">View My Wishlist</a>
+        </div>
+      </div>
+      
+      <!-- Decorative corners -->
+      <div class="message-corner message-corner-tl"></div>
+      <div class="message-corner message-corner-tr"></div>
+      <div class="message-corner message-corner-bl"></div>
+      <div class="message-corner message-corner-br"></div>
+    </div>
+  </main>
+  
+  <audio id="backgroundMusic" loop>
+    <source src="./sound/happy-birthday-322777.mp3" type="audio/mpeg">
+  </audio>
+  
+  <script src="message.js"></script>
+</body>
+</html>

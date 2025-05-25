@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View wish of </title>
+  <meta name="description" content="This is a birthday celebration page for .. .">
+  <meta name="keywords" content="birthday, celebration, happy birthday">
+  <meta name="author" content="Amine">
+  <link type="image/png" sizes="16x16" rel="icon" href="./images/icons8-birthday-color-16.png"> <link type="image/png" sizes="32x32" rel="icon" href="./images/icons8-birthday-color-32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="main-container">
+    <!-- Background Effects -->
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="gradient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+    </div>
+    <div id="floatingHearts" class="floating-hearts"></div>
+    
+    <!-- Music Player -->
+    <div class="music-player">
+      <button id="musicToggle" class="music-toggle">
+        <span class="music-icon">♪</span>
+      </button>
+      <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5" class="volume-slider">
+    </div>
+    
+    <!-- Wishes Container -->
+    <div class="wishes-container">
+      <div class="wishes-header">
+        <h1>Birthday Wishes</h1>
+        <p>See all the wonderful messages from your loved ones!</p>
+      </div>
+      
+      <div id="wishesGrid" class="wishes-grid">
+        <!-- Wishes will be dynamically added here -->
+        <div class="no-wishes-message" id="noWishesMessage">
+          <p>No wishes yet. Be the first to write one!</p>
+        </div>
+      </div>
+      
+      <div class="wishes-actions">
+        <a href="write-wish.html" class="write-wish-btn">Write a Wish</a>
+      </div>
+      
+      <div class="navigation-links">
+        <a href="index.html" class="nav-link">Back to Home</a>
+      </div>
+    </div>
+  </main>
+  
+  <audio id="backgroundMusic" loop>
+    <source src="./sound/happy-birthday-322777.mp3" type="audio/mpeg">
+  </audio>
+  
+  <script type="module" src="view-wishes.js"></script>
+</body>
+</html>
