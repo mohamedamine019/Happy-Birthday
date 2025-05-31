@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 | Page Not Found</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #f9a8d4 0%, #a5b4fc 100%);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .notfound-container {
+      background: rgba(255,255,255,0.85);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      padding: 48px 32px;
+      text-align: center;
+      max-width: 400px;
+      position: relative;
+      overflow: hidden;
+    }
+    .notfound-404 {
+      font-size: 5rem;
+      font-weight: bold;
+      color: #ec4899;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5em;
+      text-shadow: 0 2px 8px #f472b6;
+    }
+    .notfound-message {
+      font-size: 1.5rem;
+      color: #a855f7;
+      margin-bottom: 1em;
+    }
+    .notfound-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5em;
+      animation: bounce 1.5s infinite;
+      display: block;
+    }
+    .notfound-actions {
+      margin-top: 2em;
+    }
+    .notfound-actions a {
+      display: inline-block;
+      margin: 0 8px;
+      padding: 10px 24px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #ec4899, #a855f7);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .notfound-actions a:hover {
+      background: linear-gradient(90deg, #a855f7, #ec4899);
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0);}
+      50% { transform: translateY(-16px);}
+    }
+    /* Decorative confetti */
+    .confetti {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      top: 0; left: 0;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="notfound-container">
+    <canvas class="confetti"></canvas>
+    <div class="notfound-icon">🎈</div>
+    <div class="notfound-404">404</div>
+    <div class="notfound-message">Oops! Page Not Found</div>
+    <div style="color:#f59e42; margin-bottom:1em;">But hey, you still get a balloon! 🎉</div>
+    <div class="notfound-actions">
+      <a href="index.html">Back to Home</a>
+      <a href="write-wish.html">Write a Wish</a>
+    </div>
+  </div>
+  <script>
+    // Simple confetti effect
+    const canvas = document.querySelector('.confetti');
+    const ctx = canvas.getContext('2d');
+    function resize() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    const confettiColors = ['#f472b6','#a855f7','#fcd34d','#60a5fa','#10b981','#f59e0b','#ef4444'];
+    const confettiPieces = Array.from({length: 40}, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 8 + 6,
+      color: confettiColors[Math.floor(Math.random() * confettiColors.length)],
+      speed: Math.random() * 1.5 + 0.5,
+      angle: Math.random() * Math.PI * 2
+    }));
+    function drawConfetti() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      confettiPieces.forEach(c => {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+        ctx.fillStyle = c.color;
+        ctx.globalAlpha = 0.7;
+        ctx.fill();
+        ctx.restore();
+        c.y += c.speed;
+        c.x += Math.sin(c.angle) * 0.5;
+        if (c.y > canvas.height) c.y = -10;
+        if (c.x > canvas.width) c.x = 0;
+        if (c.x < 0) c.x = canvas.width;
+      });
+      requestAnimationFrame(drawConfetti);
+    }
+    drawConfetti();
+  </script>
+</body>
+</html>
